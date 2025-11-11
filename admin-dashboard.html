@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard — Protea Glen Youth Centre</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* --- Admin Dashboard Styles --- */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f8fb;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #0d3b66;
+      padding: 1rem 2rem;
+      color: #fff;
+    }
+
+    .navbar h2 {
+      font-size: 1.4rem;
+    }
+
+    .logout-btn {
+      background-color: #ff4b5c;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .logout-btn:hover {
+      background-color: #e03e4e;
+    }
+
+    .dashboard-wrapper {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .dashboard-wrapper h1 {
+      color: #0d3b66;
+      margin-bottom: 2rem;
+    }
+
+    .admin-sections {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .admin-card {
+      background-color: #fff;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      width: 300px;
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    .admin-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .admin-card h3 {
+      color: #0d3b66;
+      margin-bottom: 1rem;
+    }
+
+    .admin-card p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+    }
+
+    .admin-card a {
+      display: inline-block;
+      background-color: #0d3b66;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .admin-card a:hover {
+      background-color: #145da0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .admin-sections {
+        flex-direction: column;
+        align-items: center;
+      }
+      .admin-card {
+        width: 85%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h2>Protea Glen Admin Dashboard</h2>
+    <a href="index.html" class="logout-btn" onclick="logout()">Logout</a>
+  </nav>
+
+  <!-- Dashboard Content -->
+  <div class="dashboard-wrapper">
+    <h1>Welcome, Admin </h1>
+    <p style="color:#555; margin-bottom:2rem;">
+      Manage the website content using the sections below.
+    </p>
+
+    <div class="admin-sections">
+      <!-- Articles -->
+      <div class="admin-card">
+        <h3>Manage Articles</h3>
+        <p>Create, edit, or delete educational and parenting articles.</p>
+        <a href="articles.html">Open Articles</a>
+      </div>
+
+      <!-- Notifications -->
+      <div class="admin-card">
+        <h3>Manage Notifications</h3>
+        <p>Post updates, reminders, and important announcements.</p>
+        <a href="notifications.html">Open Notifications</a>
+      </div>
+
+      <!-- Materials -->
+      <div class="admin-card">
+        <h3>Manage Materials</h3>
+        <p>Upload or remove study and learning materials for students.</p>
+        <a href="materials.html">Open Materials</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Protea Glen Youth Centre | Admin Dashboard
+  </footer>
+
+  <script>
+    // Only allow access if admin is logged in
+    if (localStorage.getItem("adminLoggedIn") !== "true") {
+      window.location.href = "admin-login.html";
+    }
+
+    function logout() {
+      localStorage.removeItem("adminLoggedIn");
+      alert("You have been logged out.");
+    }
+  </script>
+</body>
+</html>

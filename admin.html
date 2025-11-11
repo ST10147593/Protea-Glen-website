@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard - Protea Glen</title>
+  <link rel="icon" type="image/png" href="assets/favicon-.png">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/admin.css">
+<script src="js/admin.js" defer></script>
+</head>
+<body>
+<header>
+<nav class="navbar">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/devLogo1.jpg" alt="Protea Glen logo" class="logo">
+        <span class="brand-title">Protea Glen Youth Centre</span>
+      </a>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="materials.html">Materials</a></li>
+<li><a href="articles.html">Articles</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<section id="login-section" class="admin-login">
+  <div class="login-container">
+    <h1>Admin Login</h1>
+    <form id="admin-login-form">
+      <label>
+        <span>Username</span>
+        <input type="text" id="username" placeholder="Enter username" required>
+      </label>
+      <label>
+        <span>Password</span>
+        <input type="password" id="password" placeholder="Enter password" required>
+      </label>
+      <button type="submit" class="btn">Login</button>
+      <p id="login-error" class="error"></p>
+    </form>
+  </div>
+</section>
+
+<script src="js/admin.js"></script>
+
+
+<section id="dashboard-section" class="admin-dashboard hidden">
+<h1>Admin Dashboard</h1>
+<div class="admin-tabs">
+<button class="tab-btn active" data-tab="articles">Articles</button>
+<button class="tab-btn" data-tab="materials">Materials</button>
+<button class="tab-btn" data-tab="notifications">Notifications</button>
+<button class="tab-btn logout" id="logout-btn">Logout</button>
+</div>
+
+
+<div id="articles" class="tab-content active">
+<h2>Manage Articles</h2>
+<form id="article-form">
+<input type="text" id="article-title" placeholder="Article Title" required />
+<textarea id="article-content" placeholder="Article Content" required></textarea>
+<button type="submit" class="btn">Add Article</button>
+</form>
+<ul id="article-list"></ul>
+</div>
+
+
+<div id="materials" class="tab-content">
+<h2>Manage Materials</h2>
+<form id="material-form">
+<input type="file" id="material-file" required />
+<button type="submit" class="btn">Upload Material</button>
+</form>
+<ul id="material-list"></ul>
+</div>
+
+
+<div id="notifications" class="tab-content">
+<h2>Manage Notifications</h2>
+<form id="notification-form">
+<input type="text" id="notification-title" placeholder="Notification Title" required />
+<textarea id="notification-content" placeholder="Notification Details" required></textarea>
+<button type="submit" class="btn">Add Notification</button>
+</form>
+<ul id="notification-list"></ul>
+</div>
+</section>
+<script src="js/admin.js"></script>
+</main>
+
+<footer>
+<p>&copy; 2025 Protea Glen Community powered by Dev Hub</p>
+</footer>
+</body>
+</html>
